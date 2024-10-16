@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">WordsLearner</string>
+    <string name="switch_widget">Выбор</string>
+    <string name="difficult_words">Сложные слова</string>
+    <string name="easy_words">Простые слова</string>
+
+    <string name="text_1">Первое сложное слово</string>
+    <string name="text_2">Второе сложное слово</string>
+    <string name="text_3">Третье сложное слово</string>
+    <string name="text_4">Четвертое сложное слово</string>
+    <string name="text_5">Пятое сложное слово</string>
+    <string name="text_6">Шестое сложное слово</string>
+    <string name="text_7">Седьмое сложное слово</string>
+    <string name="text_8">Восьмое сложное слово</string>
+    <string name="text_9">Девятое сложное слово</string>
+    <string name="text_10">Десятое сложное слово</string>
+    <string name="text_11">Одиннадцатое сложное слово</string>
+    <string name="text_12">Двенадцатое сложное слово</string>
+    <string name="text_13">Тринадцатое сложное слово</string>
+    <string name="text_14">Четырнадцатое сложное слово</string>
+    <string name="text_15">Пятнадцатое сложное слово</string>
+
+    <string name="button_text">Перевернуть карточку</string>
+    <string name="change_buttons_color">Поменять цвет кнопок</string>
+</resources>
