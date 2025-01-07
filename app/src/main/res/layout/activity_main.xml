@@ -7,6 +7,25 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back_arrow"
+            android:contentDescription="Back"
+            android:background="?android:attr/selectableItemBackground"/>
+    </LinearLayout>
+
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/switch_widget"
         android:text="@string/switch_widget"
@@ -17,7 +36,7 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toStartOf="@+id/textView2"
         app:layout_constraintStart_toEndOf="@+id/textView1"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
         tools:ignore="UseSwitchCompatOrMaterialXml"
         tools:layout_editor_absoluteX="146dp" />
 
@@ -31,7 +50,7 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toStartOf="@+id/switch_widget"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TextView
         android:id="@+id/textView2"
@@ -43,13 +62,14 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/switch_widget"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <ScrollView
         android:id="@+id/linearLayout"
         android:layout_width="409dp"
         android:layout_height="702dp"
         android:orientation="vertical"
+        android:layoutAnimation="@anim/rv_animation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -60,6 +80,7 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/card_1"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:background="?attr/colorPrimaryContainer"
@@ -81,6 +102,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/card_2"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:background="@color/white"
@@ -102,6 +124,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/card_3"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:background="?attr/colorPrimaryContainer"
@@ -123,6 +146,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/card_4"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:background="@color/white"
@@ -144,6 +168,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/card_5"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:background="?attr/colorPrimaryContainer"
@@ -165,6 +190,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/card_6"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:background="@color/white"
@@ -186,6 +212,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/card_7"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:background="?attr/colorPrimaryContainer"
@@ -207,6 +234,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/card_8"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:background="@color/white"
@@ -228,6 +256,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/card_9"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:background="?attr/colorPrimaryContainer"
@@ -249,6 +278,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/card_10"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:background="@color/white"
@@ -270,6 +300,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/card_11"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:background="?attr/colorPrimaryContainer"
@@ -291,6 +322,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/card_12"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:background="@color/white"
@@ -312,6 +344,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/card_13"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:background="?attr/colorPrimaryContainer"
@@ -333,6 +366,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/card_14"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:background="@color/white"
@@ -354,6 +388,7 @@
 
 
             <LinearLayout
+                android:id="@+id/card_15"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:background="?attr/colorPrimaryContainer"

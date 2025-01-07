@@ -1,8 +1,15 @@
 package com.wordslearner
 
+import android.animation.Animator
+import android.animation.ObjectAnimator
 import android.graphics.Color
 import android.os.Bundle
+import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.Button
+import android.widget.ImageButton
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -45,7 +52,23 @@ class MainActivity : AppCompatActivity() {
         val button13: Button = findViewById(R.id.button_13)
         val button14: Button = findViewById(R.id.button_14)
         val button15: Button = findViewById(R.id.button_15)
-        val change_button: Button = findViewById(R.id.change_button)
+        val backButton: ImageButton = findViewById(R.id.back_button)
+        val changeButton: Button = findViewById(R.id.change_button)
+
+        val card2: LinearLayout = findViewById(R.id.card_2)
+        val card3: LinearLayout = findViewById(R.id.card_3)
+        val card4: LinearLayout = findViewById(R.id.card_4)
+        val card5: LinearLayout = findViewById(R.id.card_5)
+        val card6: LinearLayout = findViewById(R.id.card_6)
+        val card7: LinearLayout = findViewById(R.id.card_7)
+        val card8: LinearLayout = findViewById(R.id.card_8)
+        val card9: LinearLayout = findViewById(R.id.card_9)
+        val card10: LinearLayout = findViewById(R.id.card_10)
+        val card11: LinearLayout = findViewById(R.id.card_11)
+        val card12: LinearLayout = findViewById(R.id.card_12)
+        val card13: LinearLayout = findViewById(R.id.card_13)
+        val card14: LinearLayout = findViewById(R.id.card_14)
+        val card15: LinearLayout = findViewById(R.id.card_15)
 
         val switcher = findViewById<SwitchCompat>(R.id.switch_widget)
 
@@ -121,126 +144,158 @@ class MainActivity : AppCompatActivity() {
 
 
         button1.setOnClickListener {
-            if (text1.text == choosenWords.values.elementAt(0)) {
-                text1.text = choosenWords.keys.elementAt(0)
+            val newText = if (text1.text == choosenWords.values.elementAt(0)) {
+                choosenWords.keys.elementAt(0)
             } else {
-                text1.text = choosenWords.values.elementAt(0)
+                choosenWords.values.elementAt(0)
             }
+            animateTextChange(text1, newText)
         }
 
         button2.setOnClickListener {
-            if (text2.text == choosenWords.values.elementAt(1)) {
-                text2.text = choosenWords.keys.elementAt(1)
-            } else {
-                text2.text = choosenWords.values.elementAt(1)
+            animateCardFlip(card2, text2) {
+                if (text2.text == choosenWords.values.elementAt(1)) {
+                    choosenWords.keys.elementAt(1)
+                } else {
+                    choosenWords.values.elementAt(1)
+                }
             }
         }
-
         button3.setOnClickListener {
-            if (text3.text == choosenWords.values.elementAt(2)) {
-                text3.text = choosenWords.keys.elementAt(2)
-            } else {
-                text3.text = choosenWords.values.elementAt(2)
+            animateCardFlip(card3, text3) {
+                if (text3.text == choosenWords.values.elementAt(2)) {
+                    choosenWords.keys.elementAt(2)
+                } else {
+                    choosenWords.values.elementAt(2)
+                }
             }
         }
 
         button4.setOnClickListener {
-            if (text4.text == choosenWords.values.elementAt(3)) {
-                text4.text = choosenWords.keys.elementAt(3)
-            } else {
-                text4.text = choosenWords.values.elementAt(3)
+            animateCardFlip(card4, text4) {
+                if (text4.text == choosenWords.values.elementAt(3)) {
+                    choosenWords.keys.elementAt(3)
+                } else {
+                    choosenWords.values.elementAt(3)
+                }
             }
         }
 
         button5.setOnClickListener {
-            if (text5.text == choosenWords.values.elementAt(4)) {
-                text5.text = choosenWords.keys.elementAt(4)
-            } else {
-                text5.text = choosenWords.values.elementAt(4)
+            animateCardFlip(card5, text5) {
+                if (text5.text == choosenWords.values.elementAt(4)) {
+                    choosenWords.keys.elementAt(4)
+                } else {
+                    choosenWords.values.elementAt(4)
+                }
             }
         }
 
         button6.setOnClickListener {
-            if (text6.text == choosenWords.values.elementAt(5)) {
-                text6.text = choosenWords.keys.elementAt(5)
-            } else {
-                text6.text = choosenWords.values.elementAt(5)
+            animateCardFlip(card6, text6) {
+                if (text6.text == choosenWords.values.elementAt(5)) {
+                    choosenWords.keys.elementAt(5)
+                } else {
+                    choosenWords.values.elementAt(5)
+                }
             }
         }
 
         button7.setOnClickListener {
-            if (text7.text == choosenWords.values.elementAt(6)) {
-                text7.text = choosenWords.keys.elementAt(6)
-            } else {
-                text7.text = choosenWords.values.elementAt(6)
+            animateCardFlip(card7, text7) {
+                if (text7.text == choosenWords.values.elementAt(6)) {
+                    choosenWords.keys.elementAt(6)
+                } else {
+                    choosenWords.values.elementAt(6)
+                }
             }
         }
 
+
         button8.setOnClickListener {
-            if (text8.text == choosenWords.values.elementAt(7)) {
-                text8.text = choosenWords.keys.elementAt(7)
-            } else {
-                text8.text = choosenWords.values.elementAt(7)
+            animateCardFlip(card8, text8) {
+                if (text8.text == choosenWords.values.elementAt(7)) {
+                    choosenWords.keys.elementAt(7)
+                } else {
+                    choosenWords.values.elementAt(7)
+                }
             }
         }
 
         button9.setOnClickListener {
-            if (text9.text == choosenWords.values.elementAt(8)) {
-                text9.text = choosenWords.keys.elementAt(8)
-            } else {
-                text9.text = choosenWords.values.elementAt(8)
+            animateCardFlip(card9, text9) {
+                if (text9.text == choosenWords.values.elementAt(8)) {
+                    choosenWords.keys.elementAt(8)
+                } else {
+                    choosenWords.values.elementAt(8)
+                }
             }
         }
 
         button10.setOnClickListener {
-            if (text10.text == choosenWords.values.elementAt(9)) {
-                text10.text = choosenWords.keys.elementAt(9)
-            } else {
-                text10.text = choosenWords.values.elementAt(9)
+            animateCardFlip(card10, text10) {
+                if (text10.text == choosenWords.values.elementAt(9)) {
+                    choosenWords.keys.elementAt(9)
+                } else {
+                    choosenWords.values.elementAt(9)
+                }
             }
         }
 
         button11.setOnClickListener {
-            if (text11.text == choosenWords.values.elementAt(10)) {
-                text11.text = choosenWords.keys.elementAt(10)
-            } else {
-                text11.text = choosenWords.values.elementAt(10)
+            animateCardFlip(card11, text11) {
+                if (text11.text == choosenWords.values.elementAt(10)) {
+                    choosenWords.keys.elementAt(10)
+                } else {
+                    choosenWords.values.elementAt(10)
+                }
             }
         }
 
         button12.setOnClickListener {
-            if (text12.text == choosenWords.values.elementAt(11)) {
-                text12.text = choosenWords.keys.elementAt(11)
-            } else {
-                text12.text = choosenWords.values.elementAt(11)
+            animateCardFlip(card12, text12) {
+                if (text12.text == choosenWords.values.elementAt(11)) {
+                    choosenWords.keys.elementAt(11)
+                } else {
+                    choosenWords.values.elementAt(11)
+                }
             }
         }
 
         button13.setOnClickListener {
-            if (text13.text == choosenWords.values.elementAt(12)) {
-                text13.text = choosenWords.keys.elementAt(12)
-            } else {
-                text13.text = choosenWords.values.elementAt(12)
+            animateCardFlip(card13, text13) {
+                if (text13.text == choosenWords.values.elementAt(12)) {
+                    choosenWords.keys.elementAt(12)
+                } else {
+                    choosenWords.values.elementAt(12)
+                }
             }
         }
 
         button14.setOnClickListener {
-            if (text14.text == choosenWords.values.elementAt(13)) {
-                text14.text = choosenWords.keys.elementAt(13)
-            } else {
-                text14.text = choosenWords.values.elementAt(13)
+            animateCardFlip(card14, text14) {
+                if (text14.text == choosenWords.values.elementAt(13)) {
+                    choosenWords.keys.elementAt(13)
+                } else {
+                    choosenWords.values.elementAt(13)
+                }
             }
         }
 
         button15.setOnClickListener {
-            if (text15.text == choosenWords.values.elementAt(14)) {
-                text15.text = choosenWords.keys.elementAt(14)
-            } else {
-                text15.text = choosenWords.values.elementAt(14)
+            animateCardFlip(card15, text15) {
+                if (text15.text == choosenWords.values.elementAt(14)) {
+                    choosenWords.keys.elementAt(14)
+                } else {
+                    choosenWords.values.elementAt(14)
+                }
             }
         }
+        backButton.setOnClickListener {
+            finish()
+        }
 
-        change_button.setOnClickListener {
+        changeButton.setOnClickListener {
             button2.setBackgroundColor(Color.BLUE)
             button4.setBackgroundColor(Color.BLUE)
             button6.setBackgroundColor(Color.BLUE)
@@ -248,10 +303,10 @@ class MainActivity : AppCompatActivity() {
             button10.setBackgroundColor(Color.BLUE)
             button12.setBackgroundColor(Color.BLUE)
             button14.setBackgroundColor(Color.BLUE)
-            change_button.setBackgroundColor(Color.BLUE)
+            changeButton.setBackgroundColor(Color.BLUE)
         }
 
-        change_button.setOnLongClickListener {
+        changeButton.setOnLongClickListener {
             button1.setBackgroundColor(Color.WHITE)
             button1.setTextColor(Color.BLUE)
             button3.setBackgroundColor(Color.WHITE)
@@ -268,8 +323,54 @@ class MainActivity : AppCompatActivity() {
             button13.setTextColor(Color.BLUE)
             button15.setBackgroundColor(Color.WHITE)
             button15.setTextColor(Color.BLUE)
-            change_button.setBackgroundColor(Color.WHITE)
+            changeButton.setBackgroundColor(Color.WHITE)
             true
         }
+    }
+
+    private fun animateTextChange(
+        textView: TextView,
+        newText: String
+    ) {
+        val fadeOut = AnimationUtils.loadAnimation(this, R.anim.fade_out)
+        val fadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in)
+
+        fadeOut.setAnimationListener(object : Animation.AnimationListener {
+            override fun onAnimationStart(animation: Animation?) {}
+
+            override fun onAnimationEnd(animation: Animation?) {
+                textView.text = newText
+                textView.startAnimation(fadeIn)
+            }
+
+            override fun onAnimationRepeat(animation: Animation?) {}
+        })
+
+        textView.startAnimation(fadeOut)
+    }
+
+    private fun animateCardFlip(
+        card: View,
+        textView: TextView,
+        getNewText: () -> String
+    ) {
+        val rotationAnimator = ObjectAnimator.ofFloat(card, "rotationY", 0f, 90f)
+        rotationAnimator.duration = 500
+
+        rotationAnimator.addListener(object : Animator.AnimatorListener {
+            override fun onAnimationStart(p0: Animator) {}
+            override fun onAnimationEnd(p0: Animator) {
+                textView.text = getNewText()
+
+                ObjectAnimator.ofFloat(card, "rotationY", 270f, 360f).apply {
+                    duration = 500
+                    start()
+                }
+            }
+
+            override fun onAnimationCancel(p0: Animator) {}
+            override fun onAnimationRepeat(p0: Animator)  {}
+        })
+        rotationAnimator.start()
     }
 }
